@@ -5,7 +5,7 @@ const path = require('path');
 // Configuração
 const app = express();
 const PORT = 3001;
-const N8N_URL = 'https://spicy-pugs-check.loca.lt/webhook/76481988-7d5a-4a82-a6ef-bffad0b029c3/chat';
+const N8N_URL = 'https://malinda-oscitant-trivially.ngrok-free.dev/webhook/76481988-7d5a-4a82-a6ef-bffad0b029c3/chat';
 
 // Middleware
 app.use(cors());
@@ -26,7 +26,8 @@ app.post('/api/chat', async (req, res) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Bypass-Tunnel-Reminder': 'true' // Necessário para localtunnel
+                'Bypass-Tunnel-Reminder': 'true', // Para localtunnel
+                'ngrok-skip-browser-warning': 'true' // Para ngrok
             },
             body: JSON.stringify(req.body)
         });
