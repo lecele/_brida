@@ -1,5 +1,8 @@
 {
     "version": 2,
+    "env": {
+        "N8N_WEBHOOK_URL": "https://ata-gravity-guidance-affiliation.trycloudflare.com/webhook/76481988-7d5a-4a82-a6ef-bffad0b029c3/chat"
+    },
     "builds": [
         {
             "src": "server.js",
