@@ -5,7 +5,7 @@ const path = require('path');
 // Configuração
 const app = express();
 const PORT = 3001;
-const N8N_URL = 'http://localhost:5678/webhook/76481988-7d5a-4a82-a6ef-bffad0b029c3/chat';
+const N8N_URL = 'https://eighty-sloths-fix.loca.lt/webhook/76481988-7d5a-4a82-a6ef-bffad0b029c3/chat';
 
 // Middleware
 app.use(cors());
@@ -24,7 +24,11 @@ app.post('/api/chat', async (req, res) => {
         console.log(`Tentando conectar em: ${N8N_URL}`);
         let response = await fetch(N8N_URL, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                'Bypass-Tunnel-Reminder': 'true', // Para localtunnel
+                'ngrok-skip-browser-warning': 'true' // Para ngrok
+            },
             body: JSON.stringify(req.body)
         });
 
@@ -62,9 +66,14 @@ app.post('/api/chat', async (req, res) => {
     }
 });
 
-// Iniciar servidor
-app.listen(PORT, () => {
-    console.log(`\n=== Servidor do Chat Brida Rodando ===`);
-    console.log(`Acesse: http://localhost:${PORT}`);
-    console.log(`Proxy configurado para: ${N8N_URL}\n`);
-});
+// Exporta o app para o Vercel (Serverless)
+module.exports = app;
+
+// Iniciar servidor apenas se executado diretamente (Local)
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`\n=== Servidor do Chat Brida Rodando ===`);
+        console.log(`Acesse: http://localhost:${PORT}`);
+        console.log(`Proxy configurado para: ${N8N_URL}\n`);
+    });
+}
