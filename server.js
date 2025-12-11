@@ -5,7 +5,7 @@ const path = require('path');
 // Configuração
 const app = express();
 const PORT = 3001;
-const N8N_URL = 'https://eighty-sloths-fix.loca.lt/webhook/76481988-7d5a-4a82-a6ef-bffad0b029c3/chat';
+const N8N_URL = 'https://easy-towns-happen.loca.lt/webhook/76481988-7d5a-4a82-a6ef-bffad0b029c3/chat';
 
 // Middleware
 app.use(cors());
