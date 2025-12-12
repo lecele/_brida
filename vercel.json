@@ -1,7 +1,7 @@
 {
     "version": 2,
     "env": {
-        "N8N_WEBHOOK_URL": "https://katrina-publications-costs-traveler.trycloudflare.com/webhook/76481988-7d5a-4a82-a6ef-bffad0b029c3/chat"
+        "N8N_WEBHOOK_URL": "https://bucks-distribution-sofa-completion.trycloudflare.com/webhook/76481988-7d5a-4a82-a6ef-bffad0b029c3/chat"
     },
     "builds": [
         {
