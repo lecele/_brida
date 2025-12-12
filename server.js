@@ -5,7 +5,7 @@ const path = require('path');
 // Configuração
 const app = express();
 const PORT = 3001;
-const N8N_URL = process.env.N8N_WEBHOOK_URL || 'https://bucks-distribution-sofa-completion.trycloudflare.com/webhook/76481988-7d5a-4a82-a6ef-bffad0b029c3/chat';
+const N8N_URL = process.env.N8N_WEBHOOK_URL || 'https://malinda-oscitant-trivially.ngrok-free.dev/webhook/76481988-7d5a-4a82-a6ef-bffad0b029c3/chat';
 
 
 // Middleware
